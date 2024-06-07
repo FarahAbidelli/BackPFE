@@ -21,4 +21,28 @@ public class RoleForm {
         this.cdRole=role.getCodrole();
         this.lbRole=role.getName();
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getCdRole() {
+        return cdRole;
+    }
+
+    public void setCdRole(String cdRole) {
+        this.cdRole = cdRole;
+    }
+
+    public ERole getLbRole() {
+        return lbRole;
+    }
+
+    public void setLbRole(ERole lbRole) {
+        this.lbRole = lbRole;
+    }
 }

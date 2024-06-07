@@ -29,4 +29,36 @@ public class Role {
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Privilege> privileges;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
+    }
+
+    public String getCodrole() {
+        return codrole;
+    }
+
+    public void setCodrole(String codrole) {
+        this.codrole = codrole;
+    }
+
+    public List<Privilege> getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(List<Privilege> privileges) {
+        this.privileges = privileges;
+    }
 }

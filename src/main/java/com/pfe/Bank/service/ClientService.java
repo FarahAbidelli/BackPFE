@@ -3,6 +3,7 @@ package com.pfe.Bank.service;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
+import com.pfe.Bank.exception.MissingEntity;
 import com.pfe.Bank.model.Client;
 import com.pfe.Bank.model.ClientProfes;
 import com.pfe.Bank.repository.ClientRepository;
@@ -18,9 +19,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -116,5 +115,25 @@ public class ClientService {
         }
 
     }
+
+    public List<Client> getClients(){
+        return clientRepository.findAll();
+    }
+    public Client getClientById(long id) throws MissingEntity {
+        Optional<Client> optional = clientRepository.findById(id);
+        if (!optional.isPresent()) {
+            throw new MissingEntity("client not found with id: " + id);
+        }
+        return optional.get();
+    }
+    @Transactional
+    public Map<String, Boolean> deleteClient(long id) throws MissingEntity {
+        Client client = getClientById(id);
+        clientRepository.delete(client);
+        Map<String,Boolean> map = new HashMap<>();
+        map.put(" client deleted",Boolean.TRUE);
+        return map;
+    }
+
 
     }
