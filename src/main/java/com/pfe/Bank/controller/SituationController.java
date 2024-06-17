@@ -1,6 +1,7 @@
 package com.pfe.Bank.controller;
 import com.pfe.Bank.dto.SituationDto;
 import com.pfe.Bank.exception.MissingEntity;
+import com.pfe.Bank.model.ClientProfes;
 import com.pfe.Bank.model.SituationClientProfes;
 import com.pfe.Bank.repository.FinanceRepository;
 import com.pfe.Bank.repository.SituationRepository;
@@ -41,6 +42,7 @@ public class SituationController {
         SituationClientProfes situationClientProfes = situationClientService.findById(id);
         return SituationDto.of(situationClientProfes);
     }
+
     @PostMapping(value = "/uploadSituation", consumes = {"multipart/form-data"})
     public ResponseEntity<Integer> uploadSituations(
             @RequestPart("file") MultipartFile file) throws IOException {
@@ -51,8 +53,5 @@ public class SituationController {
 
         return ResponseEntity.ok(situations.size());
     }
-
-
 }
-
 // Endpoint pour récupérer tous les clients

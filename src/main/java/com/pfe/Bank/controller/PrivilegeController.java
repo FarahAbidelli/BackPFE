@@ -58,7 +58,6 @@ public class PrivilegeController {
     @PutMapping("/{id}")
     public ResponseEntity<PrivilegeDto> updatePrivilege(@PathVariable long id, @RequestParam Long roleId, @RequestParam String menuId) {
         Privilege updatedPrivilege = privilegeService.updatePrivilege(id, roleId, menuId);
-
         if (updatedPrivilege == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

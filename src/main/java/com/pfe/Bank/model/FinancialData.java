@@ -1,7 +1,5 @@
 package com.pfe.Bank.model;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -9,7 +7,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Inheritance(strategy = javax.persistence.InheritanceType.TABLE_PER_CLASS)
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+//@Inheritance(strategy = javax.persistence.InheritanceType.TABLE_PER_CLASS)
 public class FinancialData {
 
     @Id
@@ -533,64 +534,5 @@ public class FinancialData {
     public void setVariableLibre7(String variableLibre7) {
         this.variableLibre7 = variableLibre7;
     }
-    public FinancialData(){};
-    public FinancialData(Long id, Date dateDeSituation, String numeroComptePrincipal, String consolidationInterne, double mntEnConsolidation, double encoursCT, double encoursMT, double encoursCreditTresorerie, double ratioEngagementCDR, String consolidationAutresBanques, String besoinAccompagnement, String besoinFinancement, String trancheEffectif, int nombreClients, String etatDuResultat, String tailleBesoinFutur, String classeBanqueCentrale, String anneeClassificationCentrale, String ratingActuelleLegacy, String classeRisqueLegacy, int scoreClientLegacy, Date dateRatingLegacy, String impaye, double montantImpayes, double ratioImpayesEngagements, int ancienneteImpayes, double mouvementsTotauxAnneeN, double mouvementsTotauxAnneeN1, double mouvementCreditieurAnneeN, double mouvementCreditieurAnneeN1, double mouvementDebiteurAnneeN, double mouvementDebiteurAnneeN1, double ratioCreditSoldeMoyen, String regulariteEcheances, double dernierSalaireYTD, double soldeMoyenAnnuelAnneeN, double soldeMoyenAnnuelAnneeN1, double totalCreancesGLE, double variationAnnuelleMvtCreditAnneeN, double variationAnnuelleMvtCreditAnneeN1, double variationMvtCredit, double rationSoldeMoyenFC, String iarCentralDesRisquesCDR, double variationEngagementCDR, double mntCreditTresorerieCDR, double variationCreditTresoCDR, String incident, String modeleApplicable, String autresInformation, String commentaire, String variableLibre1, String variableLibre2, String variableLibre3, String variableLibre4, String variableLibre5, String variableLibre6, String variableLibre7) {
-        this.id = id;
-        this.dateDeSituation = dateDeSituation;
-        this.numeroComptePrincipal = numeroComptePrincipal;
-        this.consolidationInterne = consolidationInterne;
-        this.mntEnConsolidation = mntEnConsolidation;
-        this.encoursCT = encoursCT;
-        this.encoursMT = encoursMT;
-        this.encoursCreditTresorerie = encoursCreditTresorerie;
-        this.ratioEngagementCDR = ratioEngagementCDR;
-        this.consolidationAutresBanques = consolidationAutresBanques;
-        this.besoinAccompagnement = besoinAccompagnement;
-        this.besoinFinancement = besoinFinancement;
-        this.trancheEffectif = trancheEffectif;
-        this.nombreClients = nombreClients;
-        this.etatDuResultat = etatDuResultat;
-        this.tailleBesoinFutur = tailleBesoinFutur;
-        this.classeBanqueCentrale = classeBanqueCentrale;
-        this.anneeClassificationCentrale = anneeClassificationCentrale;
-        this.ratingActuelleLegacy = ratingActuelleLegacy;
-        this.classeRisqueLegacy = classeRisqueLegacy;
-        this.scoreClientLegacy = scoreClientLegacy;
-        this.dateRatingLegacy = dateRatingLegacy;
-        this.impaye = impaye;
-        this.montantImpayes = montantImpayes;
-        this.ratioImpayesEngagements = ratioImpayesEngagements;
-        this.ancienneteImpayes = ancienneteImpayes;
-        this.mouvementsTotauxAnneeN = mouvementsTotauxAnneeN;
-        this.mouvementsTotauxAnneeN1 = mouvementsTotauxAnneeN1;
-        this.mouvementCreditieurAnneeN = mouvementCreditieurAnneeN;
-        this.mouvementCreditieurAnneeN1 = mouvementCreditieurAnneeN1;
-        this.mouvementDebiteurAnneeN = mouvementDebiteurAnneeN;
-        this.mouvementDebiteurAnneeN1 = mouvementDebiteurAnneeN1;
-        this.ratioCreditSoldeMoyen = ratioCreditSoldeMoyen;
-        this.regulariteEcheances = regulariteEcheances;
-        this.dernierSalaireYTD = dernierSalaireYTD;
-        this.soldeMoyenAnnuelAnneeN = soldeMoyenAnnuelAnneeN;
-        this.soldeMoyenAnnuelAnneeN1 = soldeMoyenAnnuelAnneeN1;
-        this.totalCreancesGLE = totalCreancesGLE;
-        this.variationAnnuelleMvtCreditAnneeN = variationAnnuelleMvtCreditAnneeN;
-        this.variationAnnuelleMvtCreditAnneeN1 = variationAnnuelleMvtCreditAnneeN1;
-        this.variationMvtCredit = variationMvtCredit;
-        this.rationSoldeMoyenFC = rationSoldeMoyenFC;
-        this.iarCentralDesRisquesCDR = iarCentralDesRisquesCDR;
-        this.variationEngagementCDR = variationEngagementCDR;
-        this.mntCreditTresorerieCDR = mntCreditTresorerieCDR;
-        this.variationCreditTresoCDR = variationCreditTresoCDR;
-        this.incident = incident;
-        this.modeleApplicable = modeleApplicable;
-        this.autresInformation = autresInformation;
-        this.commentaire = commentaire;
-        this.variableLibre1 = variableLibre1;
-        this.variableLibre2 = variableLibre2;
-        this.variableLibre3 = variableLibre3;
-        this.variableLibre4 = variableLibre4;
-        this.variableLibre5 = variableLibre5;
-        this.variableLibre6 = variableLibre6;
-        this.variableLibre7 = variableLibre7;
-    }
+
 }

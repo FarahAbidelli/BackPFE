@@ -39,11 +39,13 @@ public class ClientController {
     public List<Client> getAllClients(){
         return clientService.getClients();
     }
+
     @GetMapping("/getClientById/{id}")
     public Client getClientById(@PathVariable Long id) throws MissingEntity {
         Client client = clientService.getClientById(id);
         return client;
     }
+
     @DeleteMapping("/deleteClient/{id}")
     public Map<String,Boolean> deleteClient(@PathVariable Long id) throws MissingEntity{
         return clientService.deleteClient(id);

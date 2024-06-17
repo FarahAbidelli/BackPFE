@@ -1,7 +1,6 @@
 package com.pfe.Bank.model;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,11 +8,15 @@ import java.util.Date;
 @Table(name = "prf_client_situation")
 @Getter
 @Setter
-public class SituationClientProfes extends FinancialData {
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+ public class SituationClientProfes extends FinancialData {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", nullable = true)
     private ClientProfes client;
+
 
     private long codeRelation;
 
