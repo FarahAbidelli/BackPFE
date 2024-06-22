@@ -52,6 +52,7 @@ public class ClientProfes extends Client{
         super.setDateUpdate(dateUpdate);
         super.setIsfull(isfull);*/
         super.setId(id);
+        super.setCodeRelation(codeRelation);
     }
 
     public Date getDateRNE() {

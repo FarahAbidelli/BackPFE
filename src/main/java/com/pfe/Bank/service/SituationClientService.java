@@ -71,7 +71,7 @@ public class SituationClientService {
         Set<SituationClientProfes> updatedSituations = parseCsv(file);
 
         for (SituationClientProfes csvLine : updatedSituations) {
-            /*Optional<SituationClientProfes> existingSituationOptional = repository.findByClientAndDateDeSituation(csvLine.getClient(), csvLine.getDateDeSituation());
+            Optional<SituationClientProfes> existingSituationOptional = repository.findByClientAndDateDeSituation(csvLine.getClient(), csvLine.getDateDeSituation());
             if (existingSituationOptional.isPresent()) {
                 SituationClientProfes existingSituation = existingSituationOptional.get();
                 existingSituation.setNumeroComptePrincipal(csvLine.getNumeroComptePrincipal());
@@ -131,11 +131,11 @@ public class SituationClientService {
                 repository.save(existingSituation);
                 situations.add(existingSituation);
                 log.info("SituationClientProfes mise à jour : " + existingSituation);
-            } else {*/
+            } else {
                 repository.save(csvLine);
                 situations.add(csvLine);
                 log.info("Nouveau ClientRetail inséré : " + csvLine);
-
+            }
         }
         return situations;
     }
@@ -165,7 +165,7 @@ public class SituationClientService {
                             ClientProfes existingClient = existingClientOptional.get();
 
                             SituationClientProfes situationClientProfes = SituationClientProfes.builder()
-                                    .client(existingClient)
+                                    .clientProfes(existingClient)
                                     .codeRelation(csvLine.getCodeRelation())
                                     .dateDeSituation(simpleDateFormat.parse(csvLine.getDateDeSituation()))
                                     .numeroComptePrincipal(csvLine.getNumeroComptePrincipal())
