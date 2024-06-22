@@ -65,6 +65,7 @@ public class ModelController {
 
     @GetMapping("/ModelsSoftDeleted")
     public List<Model> getModelesToBeSoftDeleted() {
+
         return modeleService.getModelesToBeSoftDisabled();
     }
 

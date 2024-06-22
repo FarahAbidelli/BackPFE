@@ -34,6 +34,8 @@ public class ModelServiceImpl implements ModelService{
         modele.setUsed(form.isUsed());
         modele.setDateCreation(form.getDateCreation());
         modele.setUpdatebale(form.isUpdatebale());
+        modele.setMinCaValue(form.getMinCaValue());
+        modele.setMaxCaValue(form.getMaxCaValue());
         if (modele.isUsed()) {
             modele.setLastUsedDate(new Date());
         }
@@ -66,6 +68,8 @@ public class ModelServiceImpl implements ModelService{
         //modele.setLastUsedDate(new Date());
         modele.setNextUpdateDate(new Date());
         modele.setDisabled(form.isDisabled());
+        modele.setMinCaValue(form.getMinCaValue());
+        modele.setMaxCaValue(form.getMaxCaValue());
         return modeleRepository.save(modele);
     }
 
@@ -73,7 +77,7 @@ public class ModelServiceImpl implements ModelService{
     public void deleteModele(Long id) throws MissingEntity {
         Model modele = getModeleById(id);
         modele.setDisabled(true);
-        modeleRepository.save(modele);
+        modeleRepository.delete(modele);
     }
 
     public List<Model> getModelesToBeSoftDisabled() {
