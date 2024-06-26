@@ -19,7 +19,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "",allowedHeaders = "")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class SituationController {
     @Autowired
